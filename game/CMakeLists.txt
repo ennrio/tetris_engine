@@ -6,6 +6,10 @@ add_executable(game
     src/pch/game_pch.h
 )
 
+# Добавить glad.c в исходные файлы
+add_library(glad ${CMAKE_CURRENT_SOURCE_DIR}/libs/glad/src/glad.c)
+#target_include_directories(glad PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/glad/include)
+
 
 # разносим файлы по группам
 source_group("Source Files" FILES src/main.cpp src/game.cpp)
@@ -18,10 +22,14 @@ target_include_directories(game
         ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
+target_include_directories(glad PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/libs/glad/include)
+
 # Связываем игру с библиотекой engines
 target_link_libraries(game
     PRIVATE
         engine
+        glad
+        
 )
 
 # подключаем pch - precompile headers
