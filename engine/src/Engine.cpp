@@ -1,8 +1,12 @@
 #include <iostream>
 #include "engine/Engine.hpp"
+#include "graphics/Graphics.hpp"
+#include "spdlog/spdlog.h"
+#include "Log.hpp"
 
 void engine::Engine::start() {
-    std::cout << "Engine started!" << std::endl;
+    spdlog::info("Engine started!");
+    //std::cout << "Engine started!" << std::endl;
 }
 
 void engine::Engine::create_field(const int width, const int height)
@@ -42,5 +46,20 @@ void engine::Engine::add_field_sprite(const int x, const int y, const int sprite
             field[i][j] = arr_sprite[spriteNumber]->getBody()[(i-y)][j-x];
         }
     }
+}
+
+void engine::Engine::drowTriangle()
+{
+    engine::Graphics::Init(800,600);
+    engine::Graphics::Terminate();
+}
+
+void engine::Engine::testSpdlog()
+{
+
+    LOG_INFO("Hello, spdlog!");
+    LOG_ERROR("this a error");
+    LOG_WARN("This is a warning!");
+    LOG_CRIT("This is an error");
 }
 

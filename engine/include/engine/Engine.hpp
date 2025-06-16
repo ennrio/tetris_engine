@@ -9,6 +9,10 @@ namespace engine {
         void drow_field();
         void create_sprite(std::vector<std::vector<char>> body);
         void add_field_sprite(const int x, const int y, const int spriteNumber);
+        //отрисовывет треугольник
+        void drowTriangle();
+        void testSpdlog();
+
     private:
         int width  = 0;
         int height = 0;
