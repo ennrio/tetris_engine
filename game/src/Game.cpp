@@ -14,13 +14,14 @@ void game::Game::run() {
     //engine.drow_field();
     std::cout << "Game is running!" << std::endl;
     engine.create_sprite(std::vector<std::vector<char>>{
-        { '*', '#', '*', '#', '*' },
+        { '*', '#', '*', '#', '#' },
         { '*','#','#','#','*' },
         { '#','#','#','#','#' },
         { '*','*','*','*','*' }  
     });
     engine.add_field_sprite(4, 6,0);
     engine.drow_field();
+    engine.init_window(600,800,EWindowMode::flexWindow, true);
     engine.drowTriangle();
     
 } 

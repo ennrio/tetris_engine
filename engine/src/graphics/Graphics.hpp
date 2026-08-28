@@ -4,13 +4,13 @@
 #include <glad/glad.h>
 #define GLFW_STATIC
 #include <GLFW/glfw3.h>
-
+#include "../../include/Engine/Enums.hpp"
 
 
 namespace engine {
     class Graphics {
     public:
-        static bool Init(int width, int height);
+        static bool Init(EWindowMode mode, int width, int height, bool frame);
         static void Terminate();
     };
 }

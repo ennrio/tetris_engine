@@ -65,7 +65,7 @@ target_include_directories(engine PUBLIC
 target_include_directories(glad PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/libs/glad/include)
 
 # Находим GLFW
-find_package(glfw3 REQUIRED)
+#find_package(glfw3 REQUIRED)
 
 
 target_include_directories(engine PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/libs/glad/include)

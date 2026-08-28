@@ -48,9 +48,17 @@ void engine::Engine::add_field_sprite(const int x, const int y, const int sprite
     }
 }
 
-void engine::Engine::drowTriangle()
+
+void engine::Engine::init_window(int height, int width, EWindowMode mode, bool frame)
 {
-    engine::Graphics::Init(800,600);
+    if (!((int)mode + height + width)) {
+        mode = fullScreen;
+    }
+    engine::Graphics::Init(mode, height, width, frame);
+}
+
+void engine::Engine::drowTriangle()
+{ 
     engine::Graphics::Terminate();
 }
 

@@ -1,5 +1,8 @@
 #pragma once
 #include "../src/Sprite.hpp"
+#include "Enums.hpp"
+
+
 
 namespace engine {
     class Engine {
@@ -9,6 +12,8 @@ namespace engine {
         void drow_field();
         void create_sprite(std::vector<std::vector<char>> body);
         void add_field_sprite(const int x, const int y, const int spriteNumber);
+        //инициализация окна
+        void init_window(int height = 0, int width = 0, EWindowMode mode = flexWindow, bool frame = true);
         //отрисовывет треугольник
         void drowTriangle();
         void testSpdlog();
